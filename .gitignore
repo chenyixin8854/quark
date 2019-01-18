@@ -1,0 +1,10 @@
+/.idea
+/common-util/*.iml
+/*.iml
+/zuul-server/*.iml
+/account-server/*.iml
+/admin-server/*.iml
+/auth-server/*.iml
+/course-server/*.iml
+/monitor-server/*.iml
+/config-server/*.iml

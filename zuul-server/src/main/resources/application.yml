@@ -1,0 +1,19 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+server:
+  port: 8080
+spring:
+  application:
+    name: zuul
+
+zuul:
+  routes:
+    api-auth:
+      path: /api/auth/**
+      serviceId: auth
+    api-course:
+      path: /api/course/**
+      serviceId: course
