@@ -15,6 +15,7 @@
         <module>discovery-server</module>
         <module>monitor-server</module>
         <module>common-util</module>
+        <module>msg-server</module>
     </modules>
 
     <parent>
