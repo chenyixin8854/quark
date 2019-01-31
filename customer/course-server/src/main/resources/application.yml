@@ -12,7 +12,7 @@ eureka:
   client:
     registryFetchIntervalSeconds: 5
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://admin:123456@localhost:8761/eureka/
 
 #配置feign
 feign:

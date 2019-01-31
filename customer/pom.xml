@@ -7,7 +7,7 @@
     <artifactId>customer</artifactId>
     <packaging>pom</packaging>
 
-    <name>foundation</name>
+    <name>customer</name>
     <description>Demo project for Spring Boot</description>
     <modules>
         <module>course-server</module>
@@ -22,5 +22,12 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.quark.scholar</groupId>
+            <artifactId>common-util</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>

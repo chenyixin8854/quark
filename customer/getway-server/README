@@ -1,0 +1,2 @@
+ 注意springcloud gateway使用的web框架为webflux，和springMVC不兼容。
+ 引入的限流组件是hystrix。redis底层不再使用jedis，而是lettuce。

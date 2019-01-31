@@ -15,9 +15,16 @@
     <modules>
         <module>operate-server</module>
         <module>zuul-server</module>
-        <module>sso-server</module>
         <module>admin-server</module>
+        <module>msg-server</module>
     </modules>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.quark.scholar</groupId>
+            <artifactId>common-util</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>

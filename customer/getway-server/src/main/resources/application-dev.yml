@@ -1,20 +1,18 @@
 
 server:
-  port: 8888
+  port: 8080
 
 spring:
   application:
-    name: config
-  #注册配置文件仓库
+    name: getway
+
+  #网关配置
   cloud:
-    config:
-      server:
-        git:
-          uri: https://github.com/chenyixin8854/quark
-          search-paths: configuration/src/main/resources/profiles/
-          username:
-          password:
-      label: master
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
 
 #服务注册发现
 eureka:
@@ -26,11 +24,11 @@ eureka:
     lease-renewal-interval-in-seconds: 20 #每间隔10s，向服务端发送一次心跳，证明自己依然”存活“
 
 #监控端点
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  endpoint:
-    health:
-      show-details: ALWAYS
+#management:
+#    endpoints:
+#      web:
+#        exposure:
+#          include: "*"
+#    endpoint:
+#      health:
+#        show-details: ALWAYS
