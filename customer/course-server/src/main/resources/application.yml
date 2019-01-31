@@ -1,14 +1,30 @@
 server:
   port: 8762
-
 spring:
   application:
     name: course
 
+#服务发现与监测
 eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
   client:
+    registryFetchIntervalSeconds: 5
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+
+#配置feign
 feign:
   hystrix:
     enabled: true
+
+#监控端口
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS

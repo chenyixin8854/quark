@@ -13,3 +13,13 @@ eureka:
 spring:
   application:
     name: discovery
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
