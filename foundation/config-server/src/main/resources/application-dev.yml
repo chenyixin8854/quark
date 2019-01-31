@@ -1,0 +1,36 @@
+
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config
+  #注册配置文件仓库
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/chenyixin8854/quark
+          search-paths: quark
+          username:
+          password:
+      label: master
+
+#服务注册发现
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:123456@localhost:8761/eureka/
+  instance:
+    lease-expiration-duration-in-seconds: 40 #告诉服务端，如果我20s之内没有给你发心跳，就代表我“死”了，将我踢出掉。
+    lease-renewal-interval-in-seconds: 20 #每间隔10s，向服务端发送一次心跳，证明自己依然”存活“
+
+#监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

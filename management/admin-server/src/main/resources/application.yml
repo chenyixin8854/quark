@@ -2,6 +2,21 @@
 server:
   port: 8799
 
+spring:
+  application:
+    name: admin
+  #安全配置
+  security:
+    user:
+      name: admin
+      password: 123456
+  #个性化配置
+  boot:
+    admin:
+      ui:
+        title: 监控系统
+
+#服务注册与发现
 eureka:
   client:
     serviceUrl:
@@ -17,19 +32,7 @@ eureka:
     instance-id: ${eureka.instance.ip-address}:${server.port}
 
 
-spring:
-  application:
-    name: admin
-  security:
-    user:
-      name: admin
-      password: 123456
-  boot:
-    admin:
-      ui:
-        title: 监控系统
-
-
+#监控监测
 management:
     endpoints:
       web:

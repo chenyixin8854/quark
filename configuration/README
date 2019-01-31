@@ -1,1 +1,7 @@
-配置文件
+配置文件,使用bus总线的方式通知所有的微服务配置文件需要刷新
+
+对应不同的三个环境,该文件的命名规则是：{application}-{profile}.yml
+
+microservice-dev.yml
+microservice-production.yml
+microservice-test.yml
