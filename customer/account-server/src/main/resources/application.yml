@@ -4,6 +4,7 @@ spring:
   application:
     name: account
 
+#配置服务
   cloud:
     config:
       label: master

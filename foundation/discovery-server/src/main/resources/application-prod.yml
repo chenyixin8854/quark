@@ -1,0 +1,38 @@
+server:
+  port: 8763
+
+spring:
+  application:
+    name: discovery
+  #开启安全机制
+#  security:
+#    user:
+#      name: admin
+#      password: 123456
+
+#服务发现
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+#  server:
+#    enable-self-preservation: false #关闭保护机制，以确保注册中心将不可用的实例正确剔除
+#    eviction-interval-timer-in-ms: 10000 #清理失效服务的间隔10s
+
+#监控端点
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
+#  endpoint:
+#    health:
+#      show-details: ALWAYS
+
+
+
+

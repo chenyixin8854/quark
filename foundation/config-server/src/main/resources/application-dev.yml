@@ -5,7 +5,8 @@ server:
 spring:
   application:
     name: config
-  #注册配置文件仓库
+
+#注册配置文件仓库
   cloud:
     config:
       server:
