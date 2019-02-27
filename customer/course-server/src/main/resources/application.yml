@@ -4,6 +4,15 @@ spring:
   application:
     name: course
 
+#配置服务
+  cloud:
+    config:
+      label: master
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: config
+
 #服务发现与监测
 eureka:
   instance:

@@ -1,9 +1,8 @@
-
 server:
-  port: 8763
+  port: 8860
 spring:
   application:
-    name: auth
+    name: operate
 
 #配置服务
   cloud:
@@ -14,7 +13,6 @@ spring:
         enabled: true
         service-id: config
 
-
 #服务发现与监测
 eureka:
   instance:
@@ -24,6 +22,11 @@ eureka:
     registryFetchIntervalSeconds: 5
     serviceUrl:
       defaultZone: http://admin:123456@localhost:8761/eureka/
+
+#配置feign
+feign:
+  hystrix:
+    enabled: true
 
 #监控端口
 management:

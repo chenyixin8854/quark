@@ -1,4 +1,4 @@
-package com.quark.coures.Controller;
+package com.quark.coures.controller;
 
 import com.quark.coures.service.UserService;
 import lombok.extern.slf4j.Slf4j;

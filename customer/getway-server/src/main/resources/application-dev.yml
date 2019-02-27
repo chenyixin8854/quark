@@ -1,18 +1,17 @@
 
 server:
   port: 8080
-
 spring:
   application:
     name: getway
 
-  #网关配置
+#开启网关， gateway自动根据服务发现为每一个服务创建了一个router，这个router将以服务名开头的请求路径转发到对应的服务
   cloud:
     gateway:
       discovery:
         locator:
           enabled: true
-          lower-case-service-id: true
+          lowerCaseServiceId: true
 
 #服务注册发现
 eureka:
@@ -23,12 +22,12 @@ eureka:
     lease-expiration-duration-in-seconds: 40 #告诉服务端，如果我20s之内没有给你发心跳，就代表我“死”了，将我踢出掉。
     lease-renewal-interval-in-seconds: 20 #每间隔10s，向服务端发送一次心跳，证明自己依然”存活“
 
-#监控端点
-#management:
-#    endpoints:
-#      web:
-#        exposure:
-#          include: "*"
-#    endpoint:
-#      health:
-#        show-details: ALWAYS
+#监控端点(对外网服务应当上线前关闭)
+management:
+    endpoints:
+      web:
+        exposure:
+          include: "*"
+    endpoint:
+      health:
+        show-details: ALWAYS
