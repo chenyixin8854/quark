@@ -17,11 +17,12 @@ public class DemoController {
     @Autowired(required = false)
     UserService userService;
 
+
     @RequestMapping("/hi")
-    public String home(@RequestParam(value = "name", defaultValue = "course") String name) {
-        log.info("======== hello demo ");
-        return "hi " + name + " ,i am from port:" + port;
+    public String home() {
+        return "Hello this is course! ";
     }
+
 
     @GetMapping("/user")
     public String getUser(@RequestParam(value = "userId", defaultValue = "1") String userId) {

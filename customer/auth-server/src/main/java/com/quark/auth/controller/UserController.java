@@ -13,7 +13,6 @@ public class UserController {
 
     @GetMapping("/user")
     public User queryUserInfo(@RequestParam Long userId){
-
         User user= new User();
         user.setId(1);
         user.setUserName("车上那些");

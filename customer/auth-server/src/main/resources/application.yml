@@ -4,7 +4,6 @@ server:
 spring:
   application:
     name: auth
-
 #配置服务
   cloud:
     config:
@@ -14,6 +13,34 @@ spring:
         enabled: true
         service-id: config
 
+#redis配置信息
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    password:
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+
+#数据库连接
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/quark_auth?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
+    username: root
+    password: 123456
+    hikari:
+      auto-commit: false
+      maximum-pool-size: 20
+      minimum-idle: 5
+      max-lifetime: 10000
+      validation-timeout: 10000
+      connection-test-query: select 1
+mybatis:
+  mapper-locations: mapper/*.xml
+  type-aliases-package: com.quark.auth.entity
 
 #服务发现与监测
 eureka:
@@ -34,3 +61,4 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+

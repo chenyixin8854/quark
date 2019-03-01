@@ -13,4 +13,10 @@ public class DemoController {
     public Mono<String> fallback() {
         return Mono.just("fallback");
     }
+
+
+    @RequestMapping("/hi")
+    public String home() {
+        return "Hello this is getway! ";
+    }
 }

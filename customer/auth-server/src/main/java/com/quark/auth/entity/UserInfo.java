@@ -1,17 +1,17 @@
 package com.quark.auth.entity;
 
 import lombok.Data;
-
 import java.util.Date;
+
 @Data
-public class User {
+public class UserInfo {
     private Integer id;
 
-    private String userName;
+    private Integer userId;
 
-    private String userPhone;
+    private String userEmail;
 
-    private Integer userStatus;
+    private String userCity;
 
     private Date createTime;
 
