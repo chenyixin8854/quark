@@ -15,6 +15,13 @@ spring:
         service-id: config
 
 
+  mail:
+    host: smtp.qq.com # 设置邮箱主机
+    username:
+    password:   # 设置密码，该处的密码是QQ邮箱开启SMTP的授权码而非QQ密码
+#    properties: {mail.smtp.auth:true,mail.smtp.starttls.enable:true,mail.smtp.starttls.required:true}
+
+
 #服务发现与监测
 eureka:
   instance:

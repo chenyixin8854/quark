@@ -1,6 +1,6 @@
 package com.quark.util.model;
 
-import com.quark.util.enums.ResponseInfoEnum;
+import com.quark.util.enums.ResponseCode;
 import lombok.Getter;
 import lombok.Setter;
 import java.io.Serializable;
@@ -19,16 +19,16 @@ public class StandardResponse implements Serializable {
     private StandardResponse(){
     }
 
-    public StandardResponse(ResponseInfoEnum infoEnum, Object data){
-        this.code=infoEnum.getCode();
-        this.msg=infoEnum.getMessage();
+    public StandardResponse(ResponseCode responseCode, Object data){
+        this.code=responseCode.getCode();
+        this.msg=responseCode.getMsg();
         this.data=data;
     }
 
     public static StandardResponse successResponse(){
         StandardResponse response=new StandardResponse();
-        response.code=ResponseInfoEnum.SUCCESS.getCode();
-        response.msg=ResponseInfoEnum.SUCCESS.getMessage();
+        response.code=ResponseCode.SUCCESS.getCode();
+        response.msg=ResponseCode.SUCCESS.getMsg();
         return response;
     }
 
@@ -41,15 +41,15 @@ public class StandardResponse implements Serializable {
 
     public static StandardResponse errorResponse(){
         StandardResponse response=new StandardResponse();
-        response.code=ResponseInfoEnum.ERROR.getCode();
-        response.msg=ResponseInfoEnum.ERROR.getMessage();
+        response.code=ResponseCode.FAIL.getCode();
+        response.msg=ResponseCode.FAIL.getMsg();
         return response;
     }
 
-    public static StandardResponse errorResponse(ResponseInfoEnum infoEnum){
+    public static StandardResponse errorResponse(ResponseCode responseCode){
         StandardResponse response=new StandardResponse();
-        response.code=infoEnum.getCode();
-        response.msg=infoEnum.getMessage();
+        response.code=responseCode.getCode();
+        response.msg=responseCode.getMsg();
         return response;
     }
 
