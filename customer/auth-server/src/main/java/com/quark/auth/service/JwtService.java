@@ -60,4 +60,7 @@ public class JwtService {
         return PREFIX+jwtToken.getUserId();
     }
 
+    public void verifierToken(String token) {
+
+    }
 }

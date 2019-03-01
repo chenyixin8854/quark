@@ -10,7 +10,10 @@ public enum ResponseCode {
     INTERFACE_ERROR(1001,"接口异常"),
     THRID_ERROR(1002,"第三方接口异常"),
     DATA_IS_EMPTY(1003,"暂无数据"),
-    AUTH_CODE_ERROR(1004,"生产验证码异常"),
+    AUTH_CODE_CREATE_ERROR(1004,"生成验证码异常"),
+    AUTH_CODE_EXPIREED(1005,"验证码已过期"),
+    AUTH_CODE_ERROR(1006,"验证码错误，请重新输入"),
+
     TOKEN_ERROR1(4000,"无认证信息，请登录"),
     TOKEN_ERROR2(4001,"无效的认证信息，请重新登录"),
     TOKEN_ERROR3(4002,"用户已不存在"),

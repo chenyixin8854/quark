@@ -26,7 +26,7 @@ import java.util.concurrent.TimeUnit;
 @RestController
 @Slf4j
 public class LoginController {
-    private static final String PREFIX="quark";
+    private static final String PREFIX="MSG_";
     @Autowired
     UserService userService;
     @Autowired
@@ -79,7 +79,6 @@ public class LoginController {
         Map<String,Object> result=new HashMap<>();
         try{
             JwtToken token=authService.phoneAuthenticate(phone,authCode);
-            Assert.notNull(token,"token信息生成失败");
             result.put("userId",token.getUserId());
             result.put("userName",token.getUserName());
             result.put("token",jwtService.createToken(token));
